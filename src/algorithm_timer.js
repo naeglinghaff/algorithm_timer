@@ -1,16 +1,14 @@
 "use strict";
 
 class AlgorithmTimer {
-  constructor(array) {
-    this._timeTaken = 0;
-    this._array = array;
+  constructor() {
   }
 
-  recordTime(){
+  recordTime(array){
     let aFunction = Array.prototype.sort;
     let label = aFunction.to_s;
     console.time(label);
-    aFunction.apply(this._array);
+    aFunction.apply(array);
     console.timeEnd(label);
   }
 }
