@@ -4,11 +4,10 @@ class AlgorithmTimer {
   constructor() {
   }
 
-  recordTime(array){
-    let aFunction = Array.prototype.sort;
+  recordTime(array, aFunction){
     let label = aFunction.to_s;
     console.time(label);
-    aFunction.apply(array);
+    array[aFunction]();
     console.timeEnd(label);
   }
 }

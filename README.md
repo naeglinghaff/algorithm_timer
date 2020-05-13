@@ -10,5 +10,6 @@ Copy the path for base.html and in the developer console run:
 ```
 let timer = new AlgorithmTimer();
 let array = [x,y,z];
-timer.recordTime(array);
+let function = 'nameOfFunctionYoudLikeToTest'
+timer.recordTime(array, function);
 ```
