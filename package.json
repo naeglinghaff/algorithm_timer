@@ -1,0 +1,25 @@
+{
+  "name": "algorithm_timer",
+  "version": "1.0.0",
+  "description": "A tool to test the length of time it takes for an algorithm to finish executing. Intended help someone (and me) learn about algorithm efficiency and complexity through interaction.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeglinghaff/algorithm_timer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naeglinghaff/algorithm_timer/issues"
+  },
+  "homepage": "https://github.com/naeglinghaff/algorithm_timer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-node": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
