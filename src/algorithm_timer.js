@@ -1,19 +1,23 @@
 "use strict";
+const performance = require('perf_hooks').performance;
 
 class AlgorithmTimer {
+
   constructor() {
   }
 
   recordTime(aFunction){
     let array = [];
-    let label = aFunction.to_s;
+    let results = [];
     for(var i = 0; i < 20; i++){
       returnIncreasedArray(array);
-      console.time(label);
+      var startTime = performance.now();
       array[aFunction]();
-      console.timeEnd(label);
-      console.log(array.length);
+      var endTime = performance.now();
+      var item = [array.length, (endTime - startTime)]
+      results.push(item);
     }
+    return results;
 
     function returnIncreasedArray(array){
       var low = 0;

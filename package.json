@@ -4,9 +4,8 @@
   "description": "A tool to test the length of time it takes for an algorithm to finish executing. Intended help someone (and me) learn about algorithm efficiency and complexity through interaction.",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node spec",
+    "test": "npx jasmine",
     "start": "node app.js"
-
   },
   "repository": {
     "type": "git",
@@ -23,5 +22,8 @@
     "jasmine-console-reporter": "^3.1.0",
     "jasmine-node": "^3.0.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0"
   }
 }
