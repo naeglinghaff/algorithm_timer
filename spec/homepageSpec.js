@@ -9,8 +9,8 @@ describe('homepage', () => {
         done();
       })
     })
-    it("returns Algorithm Timer", function(done) {
-      request.get(root_url, function(error, response, body) {
+    it("returns Algorithm Timer", (done) => {
+      request.get(root_url, (error, response, body) => {
         expect(body).toBe("Algorithm Timer");
         done();
       })

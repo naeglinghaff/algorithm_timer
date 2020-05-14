@@ -5,11 +5,8 @@ Intended help someone (and me) learn about algorithm efficiency and complexity t
 
 ### To run the code
 
-Copy the path for base.html and in the developer console run:
+Clone this repo and run
 
 ```
-let timer = new AlgorithmTimer();
-let array = [x,y,z];
-let function = 'nameOfFunctionYoudLikeToTest'
-timer.recordTime(array, function);
+npm start;
 ```
