@@ -1,13 +1,15 @@
 let express = require("express");
-let AlgorithmTimer = require("./src/algorithm_timer");
 let app = express();
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + '/base.html');
+  res.sendFile(__dirname + '/public/base.html');
 });
 
-const timer = new AlgorithmTimer;
-timer.recordTime('sort');
+app.post('/api', (req, res) => {
+  console.log(req.body);
+})
+
+app.use(express.static('public'));
 
 const port = 3000;
 
