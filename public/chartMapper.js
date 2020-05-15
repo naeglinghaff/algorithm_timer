@@ -5,6 +5,7 @@ class ChartMapper {
   constructor() {
   }
 
+// takes in json object, plots results to chart on base.html
   map(data){
     let res = data.timer
     const xlabels = [];

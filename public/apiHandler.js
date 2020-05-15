@@ -6,6 +6,7 @@ class ApiHandler {
     this._mapper = mapper;
   }
 
+// sends value to server side timer, returns results and calls chartmapper
    async send(value){
     var newvalue = { value };
     var options = {

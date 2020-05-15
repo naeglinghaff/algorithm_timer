@@ -6,6 +6,7 @@ class EventController {
     this._apihandler = apihandler;
   }
 
+// listens for change in selection, sends value to server via apihandler object
   dropDown(){
     let object = this;
     var menu = document.getElementById("methods");

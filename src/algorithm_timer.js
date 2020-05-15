@@ -6,9 +6,10 @@ class AlgorithmTimer {
   constructor() {
   }
 
+// returns array with time of execution for parsed function and the corresponding length of the array
   recordTime(aFunction){
     let array = [];
-    let results = [];
+    let results = [[0, 0]];
     for(var i = 0; i < 20; i++){
       returnIncreasedArray(array);
       var startTime = performance.now();
@@ -19,6 +20,7 @@ class AlgorithmTimer {
     }
     return results;
 
+    // increases the array size by 5000
     function returnIncreasedArray(array){
       var low = 0;
       var high = 5000;
