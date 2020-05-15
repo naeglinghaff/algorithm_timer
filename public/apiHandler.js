@@ -6,17 +6,15 @@ class ApiHandler {
   }
 
   send(value){
+    var newvalue = { value };
     var options = {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify(value)
+      body: JSON.stringify(newvalue)
     };
     fetch('/api', options);
   }
-
-  returnTiming(){
-    fetch('/api');
-  }
+  
 }

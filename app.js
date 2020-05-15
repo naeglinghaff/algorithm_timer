@@ -1,5 +1,8 @@
 let express = require("express");
+let AlgorithmTimer = require("./src/algorithm_timer");
 let app = express();
+app.use(express.static('public'));
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + '/public/base.html');
@@ -7,9 +10,8 @@ app.get("/", (req, res) => {
 
 app.post('/api', (req, res) => {
   console.log(req.body);
+  res.end();
 })
-
-app.use(express.static('public'));
 
 const port = 3000;
 
