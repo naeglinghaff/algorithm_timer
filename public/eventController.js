@@ -14,6 +14,7 @@ class EventController {
       object._apihandler.send(value);
     })
   }
+
 }
 
 const eventController = new EventController;

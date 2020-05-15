@@ -5,7 +5,7 @@ class ApiHandler {
   constructor() {
   }
 
-  send(value){
+   async send(value){
     var newvalue = { value };
     var options = {
       method: 'POST',
@@ -14,7 +14,8 @@ class ApiHandler {
       },
       body: JSON.stringify(newvalue)
     };
-    fetch('/api', options);
+    let response = await fetch('/api', options);
+    let data = await response.json();
+    console.log(data);
+    };
   }
-  
-}

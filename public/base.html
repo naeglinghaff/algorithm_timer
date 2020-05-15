@@ -13,23 +13,10 @@
       <option value="reverse">reverse</option>
     </select>
     <canvas id="chart" width="500" height"500"></chart>
-    <script>
-    var ctx = document.getElementById('chart').getContext('2d');
-    var myLineChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Time (ms)'],
-        datasets: [{
-          label: 'Time Performance of Algorithm',
-          data: [0.14150702953338623, 0.21251404285430908, 0.1848440170288086 ]
-        }]
-      },
-    });
-  </script>
-
   </body>
   <footer>
+    <script src="./chartMapper.js"></script>
     <script src="./apiHandler.js"></script>
-    <script src="./homepage.js"></script>
+    <script src="./eventController.js"></script>
   </footer>
 </html>

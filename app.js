@@ -11,10 +11,7 @@ app.get("/", (req, res) => {
 
 app.post('/api', (req, res) => {
   nameditem = req.body.value;
-  console.log(nameditem);
-  console.log(String(nameditem));
   let data = timer.recordTime(String(nameditem));
-  console.log(data);
   res.json({
     status: 'success',
     timer: data
