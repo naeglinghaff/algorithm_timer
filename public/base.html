@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Algorithm Timer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   </head>
   <body>
     <h1> Time your algorithm </h1>
@@ -11,6 +12,21 @@
       <option value="sort">sort</option>
       <option value="reverse">reverse</option>
     </select>
+    <canvas id="chart" width="500" height"500"></chart>
+    <script>
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Time (ms)'],
+        datasets: [{
+          label: 'Time Performance of Algorithm',
+          data: [0.14150702953338623, 0.21251404285430908, 0.1848440170288086 ]
+        }]
+      },
+    });
+  </script>
+
   </body>
   <footer>
     <script src="./apiHandler.js"></script>
