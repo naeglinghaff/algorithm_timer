@@ -2,7 +2,8 @@
 
 class ApiHandler {
 
-  constructor() {
+  constructor(mapper = new ChartMapper) {
+    this._mapper = mapper;
   }
 
    async send(value){
@@ -16,6 +17,6 @@ class ApiHandler {
     };
     let response = await fetch('/api', options);
     let data = await response.json();
-    console.log(data);
+    this._mapper.map(data);
     };
   }

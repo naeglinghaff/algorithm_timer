@@ -6,16 +6,20 @@ class ChartMapper {
   }
 
   map(data){
-    const ctx = document.getElementById('chart').getContext('2d');
     const xlabels = [];
-    const ylabels = [];
+    const values = [];
+    const ctx = document.getElementById('chart').getContext('2d');
+    for(var i = 0; i < data.length; i++){
+      xlabels.push = data[i][0];
+      values.push = data[i][1];
+    }
     const myLineChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['Time (ms)', 'Length of array'],
+        labels: [ xlabels ],
         datasets: [{
           label: 'Time Performance of Algorithm',
-          data: [0.14150702953338623, 0.21251404285430908, 0.1848440170288086 ]
+          data: values
         }]
       },
     });
