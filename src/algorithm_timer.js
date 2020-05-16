@@ -8,8 +8,11 @@ class AlgorithmTimer {
 
 // returns array with time of execution for parsed function and the corresponding length of the array
   recordTime(aFunction){
+    // array to apply our function under test
     let array = [];
+    // array of the results of the test
     let results = [];
+    // number of times the tests will be performed
     const SAMPLES = 20;
 
     for(var i = 0; i < SAMPLES; i++){
@@ -17,11 +20,12 @@ class AlgorithmTimer {
     }
 
     return calculateAverage(results);
-    // support routines follow
+
+    // support routines to follow
 
     function timer(aFunction){
 
-      if(results.length == SAMPLES-1){
+      if(results.length == SAMPLES - 1){
         resetArray(array);
       }
       for(var i = 0; i < SAMPLES; i++){
@@ -48,11 +52,13 @@ class AlgorithmTimer {
       return array;
     }
 
+    // resets to original assignment of empty array
     function resetArray(array){
       array = [];
       return array;
     }
 
+    // returns the avaerage result across the samples runtime
     function calculateAverage(results){
       for(var i = 0; i < SAMPLES; i++){
         results[i][1] = results[i][1] / SAMPLES;

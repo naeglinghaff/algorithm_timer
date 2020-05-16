@@ -8,13 +8,13 @@ class ApiHandler {
 
 // sends value to server side timer, returns results and calls chartmapper
    async send(value){
-    var newvalue = { value };
+    var userSelection = { value };
     var options = {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify(newvalue)
+      body: JSON.stringify(userSelection)
     };
     let response = await fetch('/api', options);
     let data = await response.json();

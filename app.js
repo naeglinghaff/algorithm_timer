@@ -13,11 +13,12 @@ app.get("/", (req, res) => {
 // post method sends selection to server side and returns json of timings
 app.post('/api', (req, res) => {
   nameditem = req.body.value;
+  //calling function first to remove abnormal 1st results
   timer.recordTime(String(nameditem));
   let data = timer.recordTime(String(nameditem));
-  // console.log(data);
   res.json({
     status: 'success',
+    value: req.body.value,
     timer: data
   });
 })
