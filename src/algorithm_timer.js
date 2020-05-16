@@ -10,16 +10,21 @@ class AlgorithmTimer {
   recordTime(aFunction){
     let array = [];
     let results = [];
+    const SAMPLES = 20;
 
-    for(var i = 0; i < 10; i++){
+    for(var i = 0; i < SAMPLES; i++){
       timer(aFunction);
     }
 
+    return calculateAverage(results);
+    // support routines follow
+
     function timer(aFunction){
-      if(results.length == 19){
+
+      if(results.length == SAMPLES-1){
         resetArray(array);
       }
-      for(var i = 0; i < 20; i++){
+      for(var i = 0; i < SAMPLES; i++){
         returnIncreasedArray(array);
         var startTime = performance.now();
         array[aFunction]();
@@ -28,16 +33,15 @@ class AlgorithmTimer {
         if(results[i] == undefined){
           results.push(item);
         } else {
-        results[i][1] + item;
+        results[i][1] + item[1];
         }
       }
-      return results;
     }
 
     // increases the array size by 5000
     function returnIncreasedArray(array){
-      var low = 0;
-      var high = 5000;
+      var low = array.length;
+      var high = low + 5000;
         for (var i = low; i < high; i++){
           array.push(i);
         }
@@ -50,13 +54,11 @@ class AlgorithmTimer {
     }
 
     function calculateAverage(results){
-      for(var i = 0; i < 20; i++){
-        results[i][1] = results[i][1] / 10;
+      for(var i = 0; i < SAMPLES; i++){
+        results[i][1] = results[i][1] / SAMPLES;
       }
       return results;
     }
-
-    return calculateAverage(results);
   }
 }
 module.exports = AlgorithmTimer
