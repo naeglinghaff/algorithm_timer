@@ -18,6 +18,7 @@ class ApiHandler {
     };
     let response = await fetch('/api', options);
     let data = await response.json();
+    // console.log(data);
     this._mapper.map(data);
     };
   }

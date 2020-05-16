@@ -13,9 +13,8 @@ app.get("/", (req, res) => {
 // post method sends selection to server side and returns json of timings
 app.post('/api', (req, res) => {
   nameditem = req.body.value;
-  // run once so the first instance removes some spikes
-  timer.recordTime(String(nameditem));
   let data = timer.recordTime(String(nameditem));
+  // console.log(data);
   res.json({
     status: 'success',
     timer: data
