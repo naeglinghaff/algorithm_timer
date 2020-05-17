@@ -13,6 +13,5 @@ describe('Algorithm Timer', () => {
       expect(result[0]).toContain(5000);
       expect(result[19]).toContain(100000);
     })
-
   })
 })

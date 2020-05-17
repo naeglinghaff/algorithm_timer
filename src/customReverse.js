@@ -1,6 +1,6 @@
 "use strict";
 
-customReverse = function(array){
-  
+module.exports = function(array){
+  const LENGTH = array.length;
 
 }
