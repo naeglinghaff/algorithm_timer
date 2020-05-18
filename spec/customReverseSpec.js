@@ -5,13 +5,13 @@ describe('Custom Reverse', () => {
 
   it('returns a reversed array', () => {
       array = ['elephant', 5 , 'music', 11];
-      result = customReverse(array);
+      result = array.customReverse();
       expect(result).toEqual([11, 'music', 5, 'elephant']);
     })
 
     it('returns a reversed array for odd numbered arrays', () => {
         array = ['elephant', 5 , 'music', 11, 25];
-        result = customReverse(array);
+        result = array.customReverse();
         expect(result).toEqual([25, 11, 'music', 5, 'elephant']);
       })
 

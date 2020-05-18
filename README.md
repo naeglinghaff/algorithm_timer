@@ -1,7 +1,7 @@
 ## Algorithm Timer
 
 A tool to test the length of time it takes for an algorithm to finish executing.
-Intended help anyone (mostly me) learn about algorithm efficiency and complexity through interaction.
+Intended to help anyone (mostly me) learn about algorithm efficiency and complexity.
 
 ### To run the code
 
@@ -11,7 +11,7 @@ Clone this repo and run
 npm start
 ```
 
-To run the test
+To run the tests
 ```
 npm test
 ```
@@ -23,9 +23,9 @@ This meant separating out the server-side and client-side JavaScript. A user can
 
 ### Custom algorithms
 
-My custom functions are stored in the server-side in src, each in a different script file.
+My custom functions are stored, server-side in src, each in a different script file.
 
-The timer code will have to be adapted to accept these functions as they are not inbuilt Array properties.
+For the sake of this project, the Array object will have these custom functions added as properties. This would NOT be something I would attempt outside of the bounds of this project as it would affect all Array objects across the code base. *Playing with global variables is not recommended.*
 
 #### Reverse
 
@@ -39,4 +39,12 @@ The first function I needed to implement. To see how I would solve such a proble
 * Place this item at the 3rd to last item in the array -3
 * Leave the item now at 0 where it is as each item has now been fully reversed.
 
-This solution requires the array to take note of the oringal postion of each  of item and also acknowlege the length of the array.
+This solution requires the array to take note of the original position of each  of item and also acknowledge the length of the array.
+
+An alternative route would be to:
+
+* Pick up the item at position 0
+* Swap it with the item at position -1
+* Pick up the item at position 1
+* Swap it with the item at position -2
+etc ..

@@ -1,5 +1,6 @@
 "use strict";
 const performance = require('perf_hooks').performance;
+let customReverse = require('./customReverse');
 
 class AlgorithmTimer {
 
