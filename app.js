@@ -1,6 +1,9 @@
 let express = require("express");
 let AlgorithmTimer = require("./src/algorithm_timer");
 let timer = new AlgorithmTimer;
+// for timing custom algorithms, avoiding global prototype editing
+let CustomAlgorithmTimer = require("./src/custom_algorithm_timer");
+let customTimer = new CustomAlgorithmTimer;
 let app = express();
 app.use(express.static('public'));
 app.use(express.json());
@@ -13,9 +16,15 @@ app.get("/", (req, res) => {
 // post method sends selection to server side and returns json of timings
 app.post('/api', (req, res) => {
   nameditem = req.body.value;
+  let data;
+  if(nameditem.includes('custom')){
+    customTimer.recordTime(String(nameditem));
+    data = customTimer.recordTime(String(nameditem));
+  } else {
   //calling function first to remove abnormal 1st results
   timer.recordTime(String(nameditem));
-  let data = timer.recordTime(String(nameditem));
+  data = timer.recordTime(String(nameditem));
+  }
   res.json({
     status: 'success',
     value: req.body.value,

@@ -1,7 +1,10 @@
 "use strict";
 const performance = require('perf_hooks').performance;
+let customReverse = require('./customReverse');
+let customShuffle = require('./customShuffle');
+let customShuffleLinear = require('./customShuffle');
 
-class AlgorithmTimer {
+class CustomAlgorithmTimer {
 
   constructor() {
   }
@@ -16,12 +19,12 @@ class AlgorithmTimer {
     const SAMPLES = 20;
     // repeated call of the timer function
     for(var i = 0; i < SAMPLES; i++){
-      timer(aFunction);
+      timer(array);
     }
 
     return calculateAverage(results);
 
-    // support routines to follow
+    // edited support routines to follow
 
     function timer(aFunction){
 
@@ -31,7 +34,7 @@ class AlgorithmTimer {
       for(var i = 0; i < SAMPLES; i++){
         returnIncreasedArray(array);
         var startTime = performance.now();
-        array[aFunction]();
+        aFunction(array);
         var endTime = performance.now();
         var item = [array.length, (endTime - startTime)]
         if(results[i] == undefined){
@@ -67,4 +70,4 @@ class AlgorithmTimer {
     }
   }
 }
-module.exports = AlgorithmTimer
+module.exports = CustomAlgorithmTimer
