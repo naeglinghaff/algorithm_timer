@@ -1,8 +1,6 @@
 "use strict";
 const performance = require('perf_hooks').performance;
-let customReverse = require('./customReverse');
-let customShuffle = require('./customShuffle');
-let customShuffleLinear = require('./customShuffle');
+let custom = require('./customAlgorithms');
 
 class CustomAlgorithmTimer {
 
@@ -11,6 +9,7 @@ class CustomAlgorithmTimer {
 
 // returns array with time of execution for parsed function and the corresponding length of the array
   recordTime(aFunction){
+
     // array to apply our function under test
     let array = [];
     // array of the results of the test
@@ -19,7 +18,7 @@ class CustomAlgorithmTimer {
     const SAMPLES = 20;
     // repeated call of the timer function
     for(var i = 0; i < SAMPLES; i++){
-      timer(array);
+      timer(aFunction);
     }
 
     return calculateAverage(results);
@@ -34,7 +33,7 @@ class CustomAlgorithmTimer {
       for(var i = 0; i < SAMPLES; i++){
         returnIncreasedArray(array);
         var startTime = performance.now();
-        aFunction(array);
+        custom[aFunction](array);
         var endTime = performance.now();
         var item = [array.length, (endTime - startTime)]
         if(results[i] == undefined){

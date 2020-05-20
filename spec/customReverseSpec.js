@@ -1,6 +1,6 @@
 describe('Custom Reverse', () => {
 
-  let reverse = require('../src/customReverse');
+  let reverse = require('../src/customAlgorithms');
   let array;
 
   it('returns a reversed array', () => {

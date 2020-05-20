@@ -1,6 +1,6 @@
 describe('Custom Shuffle', () => {
 
-  let shuffle = require('../src/customShuffle');
+  let shuffle = require('../src/customAlgorithms');
   let array;
 
   it('returns a shuffled array', () => {
