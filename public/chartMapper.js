@@ -3,6 +3,7 @@
 class ChartMapper {
 
   constructor() {
+    this._graph = undefined;
   }
 
 // takes in json object, plots results to chart on base.html
@@ -10,17 +11,16 @@ class ChartMapper {
     let res = data.timer
     const xlabels = [[0]];
     const values = [[0]];
-    let ctx;
-    if(data.value == "sort"){
-      ctx = document.getElementById('sort').getContext('2d');
-    } else {
-      ctx = document.getElementById('reverse').getContext('2d');
-    }
+    const ctx = document.getElementById('chart').getContext('2d')
+
+      // plots the data points to temporary arrays, chart will use for axis
       for(var i = 0; i < res.length; i++){
         xlabels.push(res[i][0]);
         values.push(res[i][1]);
       }
-      const myLineChart = new Chart(ctx, {
+
+      // draws new chart
+      this.graph = new Chart(ctx, {
         type: 'line',
         data: {
           labels: xlabels,
@@ -31,6 +31,10 @@ class ChartMapper {
           }]
         },
       });
+
   }
 
+  clearMap(){
+    this._graph.destroy();
+  }
 }

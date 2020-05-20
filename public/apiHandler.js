@@ -18,7 +18,9 @@ class ApiHandler {
     };
     let response = await fetch('/api', options);
     let data = await response.json();
-    // console.log(data);
+    if(this._mapper._graph != undefined){
+      this._mapper.clearMap();
+    }
     this._mapper.map(data);
     };
   }
