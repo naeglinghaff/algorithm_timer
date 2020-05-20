@@ -24,9 +24,11 @@ This meant separating out the server-side and client-side JavaScript. A user can
 
 ### Custom algorithms
 
-My custom functions are stored, server-side in src, each in a different script file.
+My custom functions are stored, server-side in src under customAlgorithms.
 
-For the sake of this project, the Array object will have these custom functions added as properties. This would NOT be something I would attempt outside of the bounds of this project as it would affect all Array objects across the code base. *Playing with global variables is not recommended.*
+In my first iteration, the Array object had these custom functions added as properties. This would NOT be something I would attempt outside of the bounds of this project as it would affect all Array objects across the code base. *Playing with global variables is not recommended.*
+
+So I decided to rework the solution, concluding that abusing the DRY principle would be the lesser of two evils. Now the custom functions are fed through a custom timer. This custom timer contains adapted code which accepts an array as a parameter. 
 
 #### Reverse
 
@@ -68,4 +70,4 @@ The possible 6 outcomes of this shuffle are:
 
 To calculate the possible permutations of an array of values you can work out length x length -1 x length -2 etc until you reach 0. For example, if we had an array of 5 values we could have 120 possible combinations of our shuffled array ( 5 x 4 x 3 x 2 x 1 = 120 ).
 
-The difference between getting a quadratic and linear result from this algorithm can come down to memory usage. Assignment is less costly than deletion so the second solution results in a quicker a more efficient algorithm. 
+The difference between getting a quadratic and linear result from this algorithm can come down to memory usage. Assignment is less costly than deletion so the second solution results in a quicker a more efficient algorithm.
