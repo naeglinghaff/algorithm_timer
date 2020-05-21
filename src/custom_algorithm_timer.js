@@ -26,8 +26,7 @@ class CustomAlgorithmTimer {
     // edited support routines to follow
 
     function timer(aFunction){
-
-      if(results.length == SAMPLES - 1){
+      if(results.length === SAMPLES - 1){
         resetArray(array);
       }
       for(var i = 0; i < SAMPLES; i++){
@@ -36,7 +35,7 @@ class CustomAlgorithmTimer {
         custom[aFunction](array);
         var endTime = performance.now();
         var item = [array.length, (endTime - startTime)]
-        if(results[i] == undefined){
+        if(results[i] === undefined){
           results.push(item);
         } else {
         results[i][1] + item[1];
@@ -48,7 +47,7 @@ class CustomAlgorithmTimer {
     function returnIncreasedArray(array){
       var low = array.length;
       var high = low + 5000;
-        for (var i = low; i < high; i++){
+        for(var i = low; i < high; i++){
           array.push(i);
         }
       return array;

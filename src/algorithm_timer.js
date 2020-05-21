@@ -25,7 +25,7 @@ class AlgorithmTimer {
 
     function timer(aFunction){
 
-      if(results.length == SAMPLES - 1){
+      if(results.length = SAMPLES - 1){
         resetArray(array);
       }
       for(var i = 0; i < SAMPLES; i++){
@@ -34,7 +34,7 @@ class AlgorithmTimer {
         array[aFunction]();
         var endTime = performance.now();
         var item = [array.length, (endTime - startTime)]
-        if(results[i] == undefined){
+        if(results[i] === undefined){
           results.push(item);
         } else {
         results[i][1] + item[1];

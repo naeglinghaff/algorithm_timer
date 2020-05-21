@@ -4,7 +4,7 @@
 function customReverse(array){
   const LENGTH = array.length;
   let movingItem;
-  if(LENGTH % 2 == 0){
+  if(LENGTH % 2 === 0){
     for(var i = 0; i < LENGTH / 2; i ++){
       var value = (LENGTH - 1) - i;
       let movingItem = array[i]
@@ -52,7 +52,7 @@ function customDuplicates(array){
   let results = [];
   for(var i = 0; i < array.length; i++){
     var value = array.shift();
-    if(array.includes(value) == true) {
+    if(array.includes(value) === true) {
     results.push(value);
     }
   }
@@ -65,7 +65,7 @@ function customDuplicatesLinear(array){
   let results = [];
   for(var i = 0; i < array.length; i++){
     var value = array[i];
-    if(seen[value] != undefined && !results.includes(value)){
+    if(seen[value] !== undefined && !results.includes(value)){
       results.push(value);
     } else {
       seen[value] = true;
