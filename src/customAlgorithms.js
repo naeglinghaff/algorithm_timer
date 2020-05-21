@@ -1,5 +1,6 @@
 "use strict";
 
+// linear reverse
 function customReverse(array){
   const LENGTH = array.length;
   let movingItem;
@@ -23,31 +24,58 @@ function customReverse(array){
   return array;
 }
 
-//quadratic interation
+// quadratic shuffle
 function customShuffle(array){
-  for(var i = 0; i < array.length; i++){
-    var newArray = [];
-    var randomIndex = Math.random() * array.length;
-    Math.floor(randomIndex);
-    newArray << array[randomIndex];
-    array.slice(randomIndex);
+  var newArray = [];
+  while(array.length > 0){
+    var randomIndex = Math.floor(Math.random() * array.length);
+    newArray.push(array[randomIndex]);
+    array.splice(randomIndex, randomIndex+1);
   }
   return newArray;
 }
 
-//linear iteration
+// linear shuffle
 function customShuffleLinear(array) {
-  for(var i = 0; i < array.length; i++){
-    var newArray = [];
-    var randomIndex = Math.random() * array.length;
-    Math.floor(randomIndex);
-    newArray << array[randomIndex];
+  var newArray = [];
+  while(array.length > 0){
+    var randomIndex = Math.floor(Math.random() * array.length);
+    newArray.push(array[randomIndex]);
     array[-1] = array[randomIndex];
     delete array[-1];
   }
   return newArray;
 }
 
-module.exports.customShuffle = customShuffle;
+// quadratic find duplicates
+function customDuplicates(array){
+  let results = [];
+  for(var i = 0; i < array.length; i++){
+    var value = array.shift();
+    if(array.includes(value) == true) {
+    results.push(value);
+    }
+  }
+  return results;
+}
+
+// linear find duplicates
+function customDuplicatesLinear(array){
+  let seen = {};
+  let results = [];
+  for(var i = 0; i < array.length; i++){
+    var value = array[i];
+    if(seen[value] != undefined && !results.includes(value)){
+      results.push(value);
+    } else {
+      seen[value] = true;
+    }
+  }
+  return results;
+}
+
+module.exports.customShuffle = customShuffle = customShuffle;
 module.exports.customShuffleLinear = customShuffleLinear;
 module.exports.customReverse = customReverse;
+module.exports.customDuplicates = customDuplicates;
+module.exports.customDuplicatesLinear = customDuplicatesLinear;

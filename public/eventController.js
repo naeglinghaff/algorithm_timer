@@ -15,8 +15,8 @@ class EventController {
       if(value == 'choose an option'){
         document.getElementById("message").innerHTML = "Please select the name of a function";
       } else {
-      object._apihandler.send(value);
-      document.getElementById("message").innerHTML = "Sit tight, results are on their way!";
+        object._apihandler.send(value);
+        document.getElementById("message").innerHTML = "Sit tight, results are on their way!";
       }
     })
   }
