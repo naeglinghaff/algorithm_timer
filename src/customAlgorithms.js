@@ -14,11 +14,11 @@ function customReverse(array){
     }
   } else {
       for(var i = 0; i < (LENGTH - 1) / 2; i++){
-      var value = (LENGTH - 1) - i;
-      movingItem = array[i]
-      var tempVar = array[value];
-      array[i] = tempVar;
-      array[value] = movingItem;
+        var value = (LENGTH - 1) - i;
+        movingItem = array[i]
+        var tempVar = array[value];
+        array[i] = tempVar;
+        array[value] = movingItem;
     }
   }
   return array;

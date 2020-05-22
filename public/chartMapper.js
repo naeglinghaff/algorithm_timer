@@ -18,7 +18,7 @@ class ChartMapper {
         xlabels.push(res[i][0]);
         values.push(res[i][1]);
       }
-      
+
       // draws new chart
       this._graph = new Chart(ctx, {
         type: 'line',

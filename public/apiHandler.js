@@ -23,5 +23,5 @@ class ApiHandler {
       this._mapper.clearMap();
     }
     this._mapper.map(data);
-    };
+    }
   }
