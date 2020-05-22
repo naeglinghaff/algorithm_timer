@@ -7,6 +7,13 @@ describe('Algorithm Timer', () => {
     timer = new AlgorithmTimer;
   })
 
+  describe('recordTime', () => {
+    it('returns an array with 20 results', () => {
+        let result = timer.recordTime('sort')
+        expect(result.length).toBe(20);
+    })
+  })
+
   describe('recordTime - sort', () => {
     it('returns a range of array lengths when sort is given as param', () => {
       let result = timer.recordTime('sort')
