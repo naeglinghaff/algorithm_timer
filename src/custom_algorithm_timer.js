@@ -33,7 +33,7 @@ class CustomAlgorithmTimer {
         returnIncreasedArray(array);
         var length = array.length;
         var startTime = performance.now();
-        custom[aFunction](array);
+        array = custom[aFunction](array);
         var endTime = performance.now();
         var item = [length, (endTime - startTime)]
         if(results[i] === undefined){
