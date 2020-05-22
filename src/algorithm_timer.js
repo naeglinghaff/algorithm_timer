@@ -25,7 +25,7 @@ class AlgorithmTimer {
 
     function timer(aFunction){
 
-      if(results.length = SAMPLES - 1){
+      if(results.length === SAMPLES - 1){
         resetArray(array);
       }
       for(var i = 0; i < SAMPLES; i++){
