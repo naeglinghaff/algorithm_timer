@@ -4,7 +4,7 @@
   "description": "A tool to test the length of time it takes for an algorithm to finish executing. Intended help someone (and me) learn about algorithm efficiency and complexity through interaction.",
   "main": "app.js",
   "scripts": {
-    "test": "npx jasmine",
+    "test": "jest",
     "start": "node app.js"
   },
   "repository": {
@@ -19,11 +19,9 @@
   "homepage": "https://github.com/naeglinghaff/algorithm_timer#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "jasmine-console-reporter": "^3.1.0",
-    "jasmine-node": "^3.0.0",
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "jasmine": "^3.5.0"
+    "jest": "^26.0.1"
   }
 }
