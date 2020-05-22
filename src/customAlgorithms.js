@@ -5,17 +5,17 @@ function customReverse(array){
   const LENGTH = array.length;
   let movingItem;
   if(LENGTH % 2 === 0){
-    for(var i = 0; i < LENGTH / 2; i ++){
+    for(var i = 0; i < LENGTH / 2; i++){
       var value = (LENGTH - 1) - i;
-      let movingItem = array[i]
+      movingItem = array[i]
       var tempVar = array[value];
       array[i] = tempVar;
       array[value] = movingItem;
     }
   } else {
-      for(var i = 0; i < (LENGTH - 1) / 2; i ++){
+      for(var i = 0; i < (LENGTH - 1) / 2; i++){
       var value = (LENGTH - 1) - i;
-      let movingItem = array[i]
+      movingItem = array[i]
       var tempVar = array[value];
       array[i] = tempVar;
       array[value] = movingItem;
@@ -74,7 +74,7 @@ function customDuplicatesLinear(array){
   return results;
 }
 
-module.exports.customShuffle = customShuffle = customShuffle;
+module.exports.customShuffle = customShuffle;
 module.exports.customShuffleLinear = customShuffleLinear;
 module.exports.customReverse = customReverse;
 module.exports.customDuplicates = customDuplicates;
