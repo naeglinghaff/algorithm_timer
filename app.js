@@ -15,13 +15,13 @@ app.get("/", (req, res) => {
 
 // post method sends selection to server side and returns json of timings
 app.post('/api', (req, res) => {
-  nameditem = req.body.value;
+  var nameditem = req.body.value;
   let data;
   if(nameditem.includes('custom')){
     customTimer.recordTime(String(nameditem));
     data = customTimer.recordTime(String(nameditem));
   } else {
-  //calling function first to remove abnormal 1st results
+  // calling function first to remove abnormal 1st results
   timer.recordTime(String(nameditem));
   data = timer.recordTime(String(nameditem));
   }

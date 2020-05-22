@@ -18,6 +18,7 @@ class ApiHandler {
     };
     let response = await fetch('/api', options);
     let data = await response.json();
+    // if the map has already been populated clear the previous object before loading in the next
     if(this._mapper._graph != undefined){
       this._mapper.clearMap();
     }
