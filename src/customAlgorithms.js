@@ -30,7 +30,7 @@ function customShuffle(array){
   while(array.length > 0){
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);
-    array.splice(randomIndex, randomIndex+1);
+    var throwaway = array.splice(randomIndex, 1);
   }
   return newArray;
 }
@@ -42,7 +42,7 @@ function customShuffleLinear(array) {
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);
     array[-1] = array[randomIndex];
-    delete array[-1];
+    array.pop();
   }
   return newArray;
 }

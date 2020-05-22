@@ -31,10 +31,11 @@ class CustomAlgorithmTimer {
       }
       for(var i = 0; i < SAMPLES; i++){
         returnIncreasedArray(array);
+        var length = array.length;
         var startTime = performance.now();
         custom[aFunction](array);
         var endTime = performance.now();
-        var item = [array.length, (endTime - startTime)]
+        var item = [length, (endTime - startTime)]
         if(results[i] === undefined){
           results.push(item);
         } else {
