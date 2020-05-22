@@ -68,8 +68,6 @@ The possible 6 outcomes of this shuffle are:
 [2,1,3]
 [2,3,1]
 
-To calculate the possible permutations of an array of values you can work out length x length -1 x length -2 etc until you reach 0. For example, if we had an array of 5 values we could have 120 possible combinations of our shuffled array ( 5 x 4 x 3 x 2 x 1 = 120 ).
-
 The difference between getting a quadratic and linear result for this algorithm can come down to how you are manipulating memory. Assignment is less costly operation than deletion, since deletion sometimes means moving the entire array in memory. This is why the second solution results in a quicker a more efficient algorithm because there is no deletion.
 
 ### Finding Duplicates
