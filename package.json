@@ -4,7 +4,7 @@
   "description": "A tool to test the length of time it takes for an algorithm to finish executing. Intended help someone (and me) learn about algorithm efficiency and complexity through interaction.",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "./node_modules/.bin/jest --coverage",
     "start": "node app.js"
   },
   "repository": {
