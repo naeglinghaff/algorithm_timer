@@ -20,7 +20,7 @@ class ChartMapper {
       }
 
       // draws new chart
-      this.graph = new Chart(ctx, {
+      this._graph = new Chart(ctx, {
         type: 'line',
         data: {
           labels: xlabels,
