@@ -41,7 +41,10 @@ function customShuffleLinear(array) {
   while(array.length > 0){
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);
-    array[-1] = array[randomIndex];
+    var value = array[randomIndex];
+    var throwaway = array[array.length - 1];
+    array[array.length - 1] = value;
+    array[randomIndex] = throwaway;
     array.pop();
   }
   return newArray;
@@ -53,7 +56,7 @@ function customDuplicates(array){
   for(var i = 0; i < array.length; i++){
     var value = array.shift();
     if(array.includes(value) === true) {
-    results.push(value);
+      results.push(value);
     }
   }
   return results;

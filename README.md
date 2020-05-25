@@ -68,8 +68,12 @@ The possible 6 outcomes of this shuffle are:
 [2,1,3]
 [2,3,1]
 
-The difference between getting a quadratic and linear result for this algorithm can come down to how you are manipulating memory. Assignment is less costly operation than deletion, since deletion sometimes means moving the entire array in memory. This is why the second solution results in a quicker a more efficient algorithm because there is no deletion.
+To shuffle the values you need to generate a random value and then use that to select items. You can then remove that item, place it either in a temporary holding variable or in another array and repeat this process until everything has been moved.
+
+In my first iteration I used the splice value to remove the item at the random index. On my second I reassigned the item to the end of the array before removing it.
+
+The difference between getting a quadratic and linear result for this algorithm can come down to how you are manipulating memory. Assignment is less costly operation than deletion, since deletion sometimes means moving the entire array in memory. This is why the second solution results in a more efficient algorithm because there is no deletion.
 
 ### Finding Duplicates
 
-Your choice of memory structure will also influence how quickly a value can be found in it. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to find a value. Find is in constant time in a hash table.
+Your choice of memory structure will also influence how quickly a value can be found in it. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to locate a value. Find is in constant time in a hash table.
