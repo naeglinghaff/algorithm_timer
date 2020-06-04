@@ -52,6 +52,19 @@ function customShuffleLinear(array) {
 
 // quadratic find duplicates
 function customDuplicates(array){
+  const newArray = [...array];
+  let results = [];
+  for(var i = 0; i < array.length; i++){
+    var value = array.shift();
+    if(array.includes(value) === true) {
+      results.push(value);
+    }
+  }
+  return newArray;
+}
+
+// quadratic find duplicates for testing
+function customDuplicatesTest(array){
   let results = [];
   for(var i = 0; i < array.length; i++){
     var value = array.shift();
