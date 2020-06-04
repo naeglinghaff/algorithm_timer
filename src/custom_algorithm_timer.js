@@ -48,9 +48,25 @@ class CustomAlgorithmTimer {
     function returnIncreasedArray(array){
       var low = array.length;
       var high = low + 5000;
-        for(var i = low; i < high; i++){
-          array.push(i);
+        for (var i = low; i < high; i++){
+          var newarray = [1,2,3,4,5,6,7,8,9,10];
+          var randomIndex = Math.floor(Math.random() * newarray.length);
+          array.push(newarray[randomIndex]);
         }
+      array = custom.customShuffleLinear(array);
+      return array;
+    }
+
+    // increases the array size by 500
+    function returnSmallerIncreasedArray(array){
+      var low = array.length;
+      var high = low + 500;
+        for (var i = low; i < high; i++){
+          var newarray = [1,2,3,4,5,6,7,8,9,10];
+          var randomIndex = Math.floor(Math.random() * newarray.length);
+          array.push(newarray[randomIndex]);
+        }
+      array = custom.customShuffleLinear(array);
       return array;
     }
 

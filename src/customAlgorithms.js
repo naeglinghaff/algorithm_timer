@@ -37,7 +37,7 @@ function customShuffle(array){
 
 // linear shuffle
 function customShuffleLinear(array) {
-  var newArray = [];
+  let newArray = [];
   while(array.length > 0){
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);

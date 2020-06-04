@@ -1,5 +1,6 @@
 "use strict";
 const performance = require('perf_hooks').performance;
+let custom = require('./customAlgorithms');
 
 class AlgorithmTimer {
 
@@ -29,7 +30,7 @@ class AlgorithmTimer {
         resetArray(array);
       }
       for(var i = 0; i < SAMPLES; i++){
-        returnIncreasedArray(array);
+        array = returnIncreasedArray(array);
         var startTime = performance.now();
         array[aFunction]();
         var endTime = performance.now();
@@ -42,13 +43,16 @@ class AlgorithmTimer {
       }
     }
 
-    // increases the array size by 5000
+    // increases the array size by 500
     function returnIncreasedArray(array){
       var low = array.length;
-      var high = low + 5000;
+      var high = low + 500;
         for (var i = low; i < high; i++){
-          array.push(i);
+          var newarray = [1,2,3,4,5,6,7,8,9,10];
+          var randomIndex = Math.floor(Math.random() * newarray.length);
+          array.push(newarray[randomIndex]);
         }
+      array = custom.customShuffleLinear(array);
       return array;
     }
 
