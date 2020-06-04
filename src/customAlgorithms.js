@@ -77,6 +77,7 @@ function customDuplicatesTest(array){
 
 // linear find duplicates
 function customDuplicatesLinear(array){
+  const newArray = [...array];
   let seen = {};
   let results = [];
   for(var i = 0; i < array.length; i++){
@@ -87,7 +88,23 @@ function customDuplicatesLinear(array){
       seen[value] = true;
     }
   }
-  return results;
+  return newArray;
+}
+
+// linear find duplicates for tests
+function customDuplicatesLinearTest(array){
+  const newArray = [...array];
+  let seen = {};
+  let results = [];
+  for(var i = 0; i < array.length; i++){
+    var value = array[i];
+    if(seen[value] !== undefined && !results.includes(value)){
+      results.push(value);
+    } else {
+      seen[value] = true;
+    }
+  }
+  return newArray;
 }
 
 module.exports.customShuffle = customShuffle;
@@ -95,3 +112,5 @@ module.exports.customShuffleLinear = customShuffleLinear;
 module.exports.customReverse = customReverse;
 module.exports.customDuplicates = customDuplicates;
 module.exports.customDuplicatesLinear = customDuplicatesLinear;
+module.exports.customDuplicatesTest = customDuplicatesTest;
+module.exports.customDuplicatesLinearTest = customDuplicatesLinearTest;
