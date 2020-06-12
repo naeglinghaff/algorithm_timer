@@ -27,7 +27,7 @@ class AlgorithmTimer {
     function timer(aFunction){
 
       if(results.length === SAMPLES - 1){
-        resetArray(array);
+        array = [];
       }
       for(var i = 0; i < SAMPLES; i++){
         array = returnIncreasedArray(array);
@@ -53,12 +53,6 @@ class AlgorithmTimer {
           array.push(newarray[randomIndex]);
         }
       array = custom.customShuffleLinear(array);
-      return array;
-    }
-
-    // resets to original assignment of empty array
-    function resetArray(array){
-      array = [];
       return array;
     }
 
