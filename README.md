@@ -1,21 +1,25 @@
 ## Algorithm Timer
 
 A tool to test the length of time it takes for an algorithm to finish executing.
-Intended to help anyone (mostly me) learn about algorithm efficiency and complexity.
+Intended to help anyone (mostly me) learn about algorithm efficiency and time complexity.
 
 ### To run the code
 
 Clone this repo and run
 
 ```
+npm install
 npm start
 ```
-Navigate to localhost:3000 in Google Chrome.
+Navigate to localhost:3000 in Google Chrome and select an algorithm you would like to test in the dropdown menu. Then you should see the results plotted to the canvas. *Warning some of the quadratic algorithms may take quite a long time - I am currently looking into ways to optimise their efficiency*.
 
-To run the tests
+Algorithms that have been written by me are denoted by the custom keyword and I have tried to indicate their level of efficiency as part of their naming conventions to differentiate versions of the same algorithm.
+
+To run the tests, clone the repo and navigate to the root directory. Run:
 ```
 npm test
 ```
+
 ### Design decisions
 
 To improve accuracy of the timer I implemented the performance class from Node.js to calculate the runtime for each function.
@@ -24,7 +28,7 @@ This meant separating out the server-side and client-side JavaScript. A user can
 
 ### Custom algorithms
 
-My custom functions are stored, server-side in src under customAlgorithms.
+My custom functions are stored, server-side in src under custom_algorithms.
 
 In my first iteration, the Array object had these custom functions added as properties. This would NOT be something I would attempt outside of the bounds of this project as it would affect all Array objects across the code base. *Playing with global variables is not recommended.*
 
@@ -76,4 +80,4 @@ The difference between getting a quadratic and linear result for this algorithm 
 
 ### Finding Duplicates
 
-Your choice of memory structure will also influence how quickly a value can be found in it. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to locate a value. Find is in constant time in a hash table.
+Your choice of memory structure will also influence how quickly a value can be found. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to locate a value. Find is a execution expressed in constant time for a hash table.
