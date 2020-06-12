@@ -24,9 +24,9 @@ npm test
 
 To improve accuracy of the timer I implemented the performance class from Node.js to calculate the runtime for each function.
 
-This meant separating out the server-side and client-side JavaScript. A user can therefore select the algorithm they would like to test via a dropdown menu on the client, this is sent back to the server-side script which runs the calculation and returns the results to be mapped via Chart.js.
+This meant separating out the server-side and client-side JavaScript. A user can therefore select the algorithm they would like to test via a dropdown menu on the client, this is sent back to the server which runs the calculation and returns the results to be mapped via Chart.js.
 
-### Known Issues
+### Known issues
 
 Node.js is not necessarily best suited for doing CPU intensive operations like the ones used here, as JavaScript is a single-threaded language. Worker thread pools have the potential to make the server-side JS more efficient. This is a current avenue of exploration for this project.
 
@@ -80,8 +80,18 @@ To shuffle the values you need to generate a random value and then use that to s
 
 In my first iteration I used the splice value to remove the item at the random index. On my second I reassigned the item to the end of the array before removing it.
 
-The difference between getting a quadratic and linear result for this algorithm can come down to how you are manipulating memory. Assignment is less costly operation than deletion, since deletion sometimes means moving the entire array in memory. This is why the second solution results in a more efficient algorithm because there is no deletion.
+The difference between a quadratic and linear result for this algorithm comes down to how you are manipulating memory. Assignment is less costly operation than deletion, since deletion sometimes means moving the entire array structure in your computer's memory. This is why the second solution results in a more efficient algorithm.
 
-### Finding Duplicates
+### Finding duplicates
 
-Your choice of memory structure will also influence how quickly a value can be found. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to locate a value. Find is a execution expressed in constant time for a hash table.
+Your choice of data structure will also influence how quickly a value can be found. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to locate a value. Find is a execution expressed in constant time for a hash table.
+
+Another thing to take into consideration when designing an algorithm is the weaknesses and strengths of any given data structure. Which one is going to be best fit for your particular problem?
+
+Sorting is an expensive operation because it involves searching, comparison and swapping or moving each item in a given dataset.
+
+### Optimisation methods
+
+* Avoid repeating operations
+* Avoid expensive memory operations like deletion
+* Choose a data structure optimised for your problem
