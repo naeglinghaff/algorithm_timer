@@ -7,7 +7,7 @@ describe('Custom Algorithm Timer', () => {
     timer = new CustomAlgorithmTimer;
   })
 
-  xdescribe('recordTime - customReverse', () => {
+  describe('recordTime - customReverse', () => {
     it('returns a range of array lengths when sort is given as param', () => {
       let result = timer.recordTime('customReverse')
       expect(result[0]).toContain(500);

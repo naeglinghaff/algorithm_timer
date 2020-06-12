@@ -104,7 +104,7 @@ function customDuplicatesLinearTest(array){
       seen[value] = true;
     }
   }
-  return newArray;
+  return results;
 }
 
 module.exports.customShuffle = customShuffle;
