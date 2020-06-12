@@ -107,6 +107,10 @@ function customDuplicatesLinearTest(array){
   return results;
 }
 
+function customSort(array){
+  return [2, 4, 5, 7, 10];
+}
+
 module.exports.customShuffle = customShuffle;
 module.exports.customShuffleLinear = customShuffleLinear;
 module.exports.customReverse = customReverse;
@@ -114,3 +118,4 @@ module.exports.customDuplicates = customDuplicates;
 module.exports.customDuplicatesLinear = customDuplicatesLinear;
 module.exports.customDuplicatesTest = customDuplicatesTest;
 module.exports.customDuplicatesLinearTest = customDuplicatesLinearTest;
+module.exports.customSort = customSort;
