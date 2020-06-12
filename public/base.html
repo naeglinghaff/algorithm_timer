@@ -2,28 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Algorithm Timer</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+      <title>Algorithm Timer</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   </head>
   <body>
     <h1> Time your algorithm </h1>
-    <p> Pick an option for the selection below. Custom algorithms, designed by yours truly, are denoted by the custom keyword. Other listed functions include built in JavaScript methods for sorting and reversing arrays </p>
-    <select id="methods" name="methods">
-      <option>choose an option</option>
-      <option value="sort">sort</option>
-      <option value="reverse">reverse</option>
-      <option value="customReverse">customReverse</option>
-      <option value="customShuffle">customShuffle</option>
-      <option value="customShuffleLinear">customShuffleLinear</option>
-      <option value="customDuplicates">customDuplicates</option>
-      <option value="customDuplicatesLinear">customDuplicatesLinear</option>
-    </select>
-    <span id="message"></span>
+      <p> Pick an option for the selection below. Custom algorithms, designed by yours truly, are denoted by the custom keyword. Other listed functions include built in JavaScript methods for sorting and reversing arrays </p>
+      <select id="methods" name="methods">
+        <option>choose an option</option>
+        <option value="sort">sort</option>
+        <option value="reverse">reverse</option>
+        <option value="customReverse">customReverse</option>
+        <option value="customShuffle">customShuffle</option>
+        <option value="customShuffleLinear">customShuffleLinear</option>
+        <option value="customDuplicates">customDuplicates</option>
+        <option value="customDuplicatesLinear">customDuplicatesLinear</option>
+      </select>
+    <div id="message"></div>
     <canvas id="chart" width="500"></canvas>
   </body>
   <footer>
-    <script src="./chartMapper.js"></script>
-    <script src="./apiHandler.js"></script>
-    <script src="./eventController.js"></script>
+    <script src="./chart_mapper.js"></script>
+    <script src="./api_handler.js"></script>
+    <script src="./event_controller.js"></script>
   </footer>
 </html>

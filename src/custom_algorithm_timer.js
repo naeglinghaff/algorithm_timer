@@ -1,6 +1,6 @@
 "use strict";
 const performance = require('perf_hooks').performance;
-let custom = require('./customAlgorithms');
+let custom = require('./custom_algorithms');
 
 class CustomAlgorithmTimer {
 

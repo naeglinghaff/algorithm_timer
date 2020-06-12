@@ -1,6 +1,6 @@
 describe('Custom Duplicates Linear', () => {
 
-  let dup = require('../src/customAlgorithms');
+  let dup = require('../src/custom_algorithms');
   let array;
 
   it('returns duplicates in an array', () => {
