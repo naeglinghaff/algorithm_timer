@@ -26,6 +26,10 @@ To improve accuracy of the timer I implemented the performance class from Node.j
 
 This meant separating out the server-side and client-side JavaScript. A user can therefore select the algorithm they would like to test via a dropdown menu on the client, this is sent back to the server-side script which runs the calculation and returns the results to be mapped via Chart.js.
 
+### Known Issues
+
+Node.js is not necessarily best suited for doing CPU intensive operations like the ones used here, as JavaScript is a single-threaded language. Worker thread pools have the potential to make the server-side JS more efficient. This is a current avenue of exploration for this project.
+
 ### Custom algorithms
 
 My custom functions are stored, server-side in src under custom_algorithms.
