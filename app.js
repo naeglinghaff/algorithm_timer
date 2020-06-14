@@ -1,10 +1,16 @@
-let express = require("express");
-let AlgorithmTimer = require("./src/algorithm_timer");
-let timer = new AlgorithmTimer;
+const express = require("express");
+
+// for timing algorithms
+const AlgorithmTimer = require("./src/algorithm_timer");
+const timer = new AlgorithmTimer;
+
 // for timing custom algorithms, avoiding global prototype editing
-let CustomAlgorithmTimer = require("./src/custom_algorithm_timer");
-let customTimer = new CustomAlgorithmTimer;
-let app = express();
+const CustomAlgorithmTimer = require("./src/custom_algorithm_timer");
+const customTimer = new CustomAlgorithmTimer;
+
+const app = express();
+
+// serves static files from the public folder
 app.use(express.static('public'));
 app.use(express.json());
 

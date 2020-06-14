@@ -37,4 +37,3 @@ class ChartMapper {
     this._graph.destroy();
   }
 }
-module.exports = ChartMapper;
