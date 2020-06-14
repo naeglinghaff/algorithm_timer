@@ -4,6 +4,10 @@
     <meta charset="utf-8">
       <title>Algorithm Timer</title>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+      <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+      <script src="spinner.js" type="text/babel"></script>
   </head>
   <body>
     <h1> Time your algorithm </h1>
@@ -19,6 +23,7 @@
         <option value="customDuplicatesLinear">customDuplicatesLinear</option>
       </select>
     <div id="message"></div>
+    <div id="spinner"></div>
     <canvas id="chart" width="500"></canvas>
   </body>
   <footer>
