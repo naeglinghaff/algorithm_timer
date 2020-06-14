@@ -1,4 +1,4 @@
-xdescribe('Custom Algorithm Timer', () => {
+describe('Custom Algorithm Timer', () => {
 
   let CustomAlgorithmTimer = require('../src/custom_algorithm_timer');
   let timer;
