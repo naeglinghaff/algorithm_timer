@@ -1,13 +1,12 @@
 function Spinner() {
 
-  const message = "message";
+  var message = "message";
 
-  return (
-    <p>{message}</p>
+  return React.createElement(
+    "p",
+    null,
+    message
   );
 }
 
-ReactDOM.render(
-  <Spinner />,
-  document.getElementById('spinner')
-);
+ReactDOM.render(React.createElement(Spinner, null), document.getElementById('spinner'));
