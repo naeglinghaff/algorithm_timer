@@ -107,8 +107,14 @@ function customDuplicatesLinearTest(array){
   return results;
 }
 
-function customSort(array){
-  return [2, 4, 5, 7, 10];
+function customSelectionSort(array){
+  let newArray = [];
+  while (array.length > 0){
+    var lowest_val = Math.min(...array);
+    newArray.push(lowest_val);
+    array = array.filter(val => val > lowest_val);
+  }
+  return newArray;
 }
 
 module.exports.customShuffle = customShuffle;
@@ -118,4 +124,4 @@ module.exports.customDuplicates = customDuplicates;
 module.exports.customDuplicatesLinear = customDuplicatesLinear;
 module.exports.customDuplicatesTest = customDuplicatesTest;
 module.exports.customDuplicatesLinearTest = customDuplicatesLinearTest;
-module.exports.customSort = customSort;
+module.exports.customSelectionSort = customSelectionSort;
