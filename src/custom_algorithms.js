@@ -63,7 +63,7 @@ function customDuplicates(array){
   return newArray;
 }
 
-// quadratic find duplicates for testing
+// quadratic find duplicates function for testing
 function customDuplicatesTest(array){
   let results = [];
   for(var i = 0; i < array.length; i++){
@@ -91,9 +91,8 @@ function customDuplicatesLinear(array){
   return newArray;
 }
 
-// linear find duplicates for tests
+// linear find duplicates for testing
 function customDuplicatesLinearTest(array){
-  const newArray = [...array];
   let seen = {};
   let results = [];
   for(var i = 0; i < array.length; i++){
@@ -107,12 +106,18 @@ function customDuplicatesLinearTest(array){
   return results;
 }
 
+// selection sort for testing
 function customSelectionSort(array){
+  var length = array.length;
   let newArray = [];
-  while (array.length > 0){
+  while (newArray.length !== length){
     var lowest_val = Math.min(...array);
+    var position = array.indexOf(lowest_val);
+    var throwaway = array[array.length - 1];
     newArray.push(lowest_val);
-    array = array.filter(val => val > lowest_val);
+    array[position] = throwaway
+    array[array.length - 1] = lowest_val
+    array.pop();
   }
   return newArray;
 }
