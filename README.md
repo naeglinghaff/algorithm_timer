@@ -84,11 +84,32 @@ The difference between a quadratic and linear result for this algorithm comes do
 
 ### Finding duplicates
 
-Your choice of data structure will also influence how quickly a value can be found. Hashes or libraries have a find advantage over arrays since you don't have to iterate through the entire structure to locate a value. Find is a execution expressed in constant time for a hash table.
+For this algorithm I figured that the process should look something like this:
 
-Another thing to take into consideration when designing an algorithm is the weaknesses and strengths of any given data structure. Which one is going to be best fit for your particular problem?
+- Look at the first value and save it as your 'tocheck' value
+- Look through the remainder of the list to see if that value appears again
+- If it does add it to a new array
+- If it doesn't move on to the next value
+
+The costly part of this is that you have to look through the whole array for each value. That's fine when you have 5 things, not so fine when you have 500,000.
+
+This is where different data structures can come into play.
+
+Different data structures are optimised for different things. A hash table in memory has a constant time for looking up a value. An array does not because it is concerned with preserving order, so you have to iterate through the object to find out if something is present or not.
+
+To find duplicates it's more efficient to use another data structure to note whether or not you have encountered a value before.
+
+A hash table, or set is a great option.
+
+In JavaScript you don't have sets so you can use object literals instead and set the values to a true value if they have been seen before and an undefined value if they have not.
+
+This algorithm revealed another area of consideration for optimising an algorithm: the weaknesses and strengths of any given data structure. Which one is going to be best fit for your particular problem?
+
+## Sort
 
 Sorting is an expensive operation because it involves searching, comparison and swapping or moving each item in a given dataset.
+
+A simple method for sort is selection sort. Here I have iterated through the array to find the minimum value, remove it and add it to a new array which will give us the order we need. The worst case for this solution is quadratic since the complexity increases in 2 dimensions as the array gets bigger. O(n2)
 
 ### Optimisation methods
 
