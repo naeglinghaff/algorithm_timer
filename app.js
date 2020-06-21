@@ -12,6 +12,7 @@ const app = express();
 
 // serves static files from the public folder
 app.use(express.static('public'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use(express.json());
 
 // retrieves the homepage html

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/naeglinghaff/algorithm_timer#readme",
   "dependencies": {
+    "bootstrap": "^3.4.1",
     "express": "^4.17.1",
     "request": "^2.88.2"
   },
