@@ -28,10 +28,6 @@ This meant separating out the server-side and client-side JavaScript. A user can
 
 To get more details on the process of how this timer was built you can read about it here: https://naeglinghaff.pythonanywhere.com/post/12/
 
-### Known issues
-
-Node.js is not necessarily best suited for doing CPU intensive operations like the ones used here, as JavaScript is a single-threaded language. Worker thread pools have the potential to make the server-side JS more efficient. This is a current avenue of exploration for this project.
-
 ### Custom algorithms
 
 My custom functions are stored, server-side in src under custom_algorithms.
@@ -84,7 +80,7 @@ In my first iteration I used the splice value to remove the item at the random i
 
 The difference between a quadratic and linear result for this algorithm comes down to how you are manipulating memory. Assignment is less costly operation than deletion, since deletion sometimes means moving the entire array structure in your computer's memory. This is why the second solution results in a more efficient algorithm.
 
-### Finding duplicates
+#### Finding duplicates
 
 For this algorithm I figured that the process should look something like this:
 
@@ -107,7 +103,7 @@ In JavaScript you don't have sets so you can use object literals instead and set
 
 This algorithm revealed another area of consideration for optimising an algorithm: the weaknesses and strengths of any given data structure. Which one is going to be best fit for your particular problem?
 
-## Sort
+#### Sort
 
 Sorting is an expensive operation because it involves searching, comparison and swapping or moving each item in a given dataset.
 
