@@ -13,12 +13,12 @@ function customReverse(array){
       array[value] = movingItem;
     }
   } else {
-      for(var i = 0; i < (LENGTH - 1) / 2; i++){
-        var value = (LENGTH - 1) - i;
-        movingItem = array[i]
-        var tempVar = array[value];
-        array[i] = tempVar;
-        array[value] = movingItem;
+      for(var e = 0; e < (LENGTH - 1) / 2; e++){
+        var newValue = (LENGTH - 1) - e;
+        movingItem = array[e]
+        var newTempVar = array[newValue];
+        array[e] = newTempVar;
+        array[newValue] = movingItem;
     }
   }
   return array;
@@ -30,7 +30,7 @@ function customShuffle(array){
   while(array.length > 0){
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);
-    var throwaway = array.splice(randomIndex, 1);
+    array.splice(randomIndex, 1);
   }
   return newArray;
 }
