@@ -107,7 +107,7 @@ This algorithm revealed another area of consideration for optimising an algorith
 
 Sorting is an expensive operation because it involves searching, comparison and swapping or moving each item in a given dataset.
 
-A simple method for sort is selection sort. Here I have iterated through the array to find the minimum value, remove it and add it to a new array which will give us the order we need. The worst case for this solution is quadratic since the complexity increases in 2 dimensions as the array gets bigger. O(n2)
+A simple method for sort is selection sort. Here I have iterated through the array to find the minimum value, pushed it to a new array which will give us the order we need, then removed it from the original. The worst case for this solution is quadratic since the complexity increases in 2 dimensions as the array gets bigger O(n2).
 
 ### Optimisation methods
 
