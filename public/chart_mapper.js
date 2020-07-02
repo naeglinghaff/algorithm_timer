@@ -15,8 +15,8 @@ class ChartMapper {
 
       // plots the data points to temporary arrays, chart will use for axis
       for(var i = 0; i < result.length; i++){
-        xlabels.push(res[i][0]);
-        ylabels.push(res[i][1]);
+        xlabels.push(result[i][0]);
+        ylabels.push(result[i][1]);
       }
 
       // draws new chart
