@@ -8,15 +8,15 @@ class ChartMapper {
 
 // takes in json object, plots results to chart on base.html
   map(data){
-    let res = data.timer
-    const xlabels = [[0]];
-    const values = [[0]];
+    let result = data.timer
+    const xlabels = [0];
+    const ylabels = [0];
     const ctx = document.getElementById('chart').getContext('2d')
 
       // plots the data points to temporary arrays, chart will use for axis
-      for(var i = 0; i < res.length; i++){
+      for(var i = 0; i < result.length; i++){
         xlabels.push(res[i][0]);
-        values.push(res[i][1]);
+        ylabels.push(res[i][1]);
       }
 
       // draws new chart
@@ -27,7 +27,7 @@ class ChartMapper {
           datasets: [{
             label: 'Time Performance of Algorithm',
             borderColor: 'rgb(76, 166, 134)',
-            data: values
+            data: ylabels
           }]
         },
       });
