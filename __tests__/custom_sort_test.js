@@ -8,7 +8,7 @@ describe('Custom Sort', () => {
       expect(dup.customSelectionSort(array)).toEqual([2, 4, 5, 7, 10]);
     })
 
-  it('returns a sorted array', () => {
+  it('returns a sorted array when there are duplicate values', () => {
       array = [10, 5, 7, 2, 4, 2];
       expect(dup.customSelectionSort(array)).toEqual([2, 2, 4, 5, 7, 10]);
     })
