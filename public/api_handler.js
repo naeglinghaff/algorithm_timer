@@ -7,8 +7,8 @@ class ApiHandler {
   }
 
 // sends value to server side timer, returns results and calls chartmapper
-   async send(value){
-    var userSelection = { value };
+   async send(valueSelected){
+    var userSelection = { valueSelected };
     var options = {
       method: 'POST',
       headers: {
