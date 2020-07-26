@@ -26,7 +26,7 @@ function customReverse(array){
 
 // quadratic shuffle
 function customShuffle(array){
-  var newArray = [];
+  const newArray = [];
   while(array.length > 0){
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);
@@ -37,7 +37,7 @@ function customShuffle(array){
 
 // linear shuffle
 function customShuffleLinear(array) {
-  let newArray = [];
+  const newArray = [];
   while(array.length > 0){
     var randomIndex = Math.floor(Math.random() * array.length);
     newArray.push(array[randomIndex]);
@@ -53,7 +53,7 @@ function customShuffleLinear(array) {
 // quadratic find duplicates
 function customDuplicates(array){
   const newArray = [...array];
-  let results = [];
+  const results = [];
   for(var i = 0; i < array.length; i++){
     var value = array.shift();
     if(array.includes(value) === true) {
@@ -65,7 +65,7 @@ function customDuplicates(array){
 
 // quadratic find duplicates function for testing
 function customDuplicatesTest(array){
-  let results = [];
+  const results = [];
   for(var i = 0; i < array.length; i++){
     var value = array.shift();
     if(array.includes(value) === true) {
@@ -78,8 +78,8 @@ function customDuplicatesTest(array){
 // linear find duplicates
 function customDuplicatesLinear(array){
   const newArray = [...array];
-  let seen = {};
-  let results = [];
+  const seen = {};
+  const results = [];
   for(var i = 0; i < array.length; i++){
     var value = array[i];
     if(seen[value] !== undefined && !results.includes(value)){
@@ -93,8 +93,8 @@ function customDuplicatesLinear(array){
 
 // linear find duplicates for testing
 function customDuplicatesLinearTest(array){
-  let seen = {};
-  let results = [];
+  const seen = {};
+  const results = [];
   for(var i = 0; i < array.length; i++){
     var value = array[i];
     if(seen[value] !== undefined && !results.includes(value)){
@@ -109,7 +109,7 @@ function customDuplicatesLinearTest(array){
 // selection sort for testing
 function customSelectionSort(array){
   var length = array.length;
-  let newArray = [];
+  const newArray = [];
   while (newArray.length !== length){
     var lowest_val = Math.min(...array);
     var position = array.indexOf(lowest_val);
@@ -120,6 +120,11 @@ function customSelectionSort(array){
     array.pop();
   }
   return newArray;
+}
+
+
+function customQuickSort(array) {
+
 }
 
 module.exports.customShuffle = customShuffle;
