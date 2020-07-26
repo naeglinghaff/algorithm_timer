@@ -123,7 +123,7 @@ function customSelectionSort(array){
 }
 
 
-function customQuickSort(array) {
+function customMergeSort(array) {
 
 }
 
